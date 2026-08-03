@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: webflux-demo
+  r2dbc:
+    url: r2dbc:h2:mem:///productdb;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always   # run schema.sql (and data.sql, if present) on startup
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.r2dbc: INFO
